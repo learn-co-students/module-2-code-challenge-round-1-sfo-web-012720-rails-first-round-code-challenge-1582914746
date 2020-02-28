@@ -1,0 +1,9 @@
+<h2><%= @heroine.name%></h2>
+<h2><%= @heroine.super_name %></h2>
+
+<h3>Powers</h3>
+<ul>
+    <% @heroine.powers.each do |p| %>
+        <li><%= p.name.titlecase %></li>
+    <% end %>
+</ul>

@@ -24,3 +24,5 @@ heroines = [
 ]
 
 heroines.each { |heroine| Heroine.create(heroine) }
+
+Heroine.all.each { |h| 2.times { h.powers << (Power.all - h.powers).sample } }
