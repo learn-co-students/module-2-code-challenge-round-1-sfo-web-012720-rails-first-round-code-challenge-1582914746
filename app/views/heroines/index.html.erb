@@ -3,8 +3,12 @@
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<%= link_to "Create New Heroine", new_heroine_path(@heroine) %>
+<br>
+<%= link_to "All Powers", powers_path %>
