@@ -1,0 +1,35 @@
+
+
+a text input for the name with the current name already displayed
+a text area input for the description with the current description already displayed
+a list of Heroines, with a checkbox for each one
+a submit button
+
+<h1>Edit Power</h1>
+
+<% if @power.errors.any? %>
+    <ul>
+        <% @power.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @power do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+    </div>
+    <div>
+        <% @power.heroines.each do |h| %>
+            <%= f.label h.name %>
+            <%= f.check_box :heroines %>
+            <br>
+        <% end %>
+    </div>
+    <%= f.submit %>
+<% end %>
