@@ -1,12 +1,18 @@
 <h2>All Superpowers</h2>
-
 <ul>
   <% @powers.each do |power| %>
     <li>
-      <%= power.name %>
+      <%= link_to power.name, power %>
       <br>
       Description: <%= power.description %>
+      <br>
+      <br>
+<!--total number of Heroines for each Power -->
+      Total number of Heroines with this power:
+      <%= power.heroines.count %>
     </li>
+    <br>
     <br>
   <% end %>
 </ul>
+<%= link_to "All Heroines", heroines_path %>
